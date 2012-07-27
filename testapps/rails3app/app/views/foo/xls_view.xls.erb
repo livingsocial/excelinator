@@ -1,0 +1,10 @@
+<%=
+
+    case params[:render_from]
+      when 'csv' then
+        Excelinator.csv_to_xls(render :partial => "all", :locals => {:arabic_only => true}).html_safe
+      when 'html' then
+        Excelinator.html_as_xls(render :partial => "all.html").html_safe
+    end
+
+%>

@@ -1,0 +1,5 @@
+source :rubygems
+
+gem 'excelinator', :path => '../..'
+gem 'fastercsv'
+gem 'spreadsheet'

@@ -1,0 +1,20 @@
+<%= link_to 'Excel of CSV', :format => :xls, :render_from => :csv %>
+<%= link_to 'Excel of HTML', :format => :xls, :render_from => :html %>
+<%= link_to 'CSV', :format => :csv %>
+
+<br/>
+<hr/>
+<br/>
+
+<%- arabic_only ||= @arabic_only
+    words = generate_words_array(arabic_only) %>
+<table border="10" cellpadding="4">
+  <%- 10.times.each do %>
+    <tr>
+      <% 10.times.each do %>
+        <td style='font-style: <%= %w(normal italic)[rand(2)] %>; font-weight: <%= %w(normal bold)[rand(2)] %>'><%= words[rand(words.length)] %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+

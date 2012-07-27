@@ -1,0 +1,22 @@
+PATH
+  remote: ../..
+  specs:
+    excelinator (1.0.0)
+      fastercsv
+      spreadsheet (= 0.6.8)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    fastercsv (1.5.4)
+    ruby-ole (1.2.11.3)
+    spreadsheet (0.6.8)
+      ruby-ole (>= 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  excelinator!
+  fastercsv
+  spreadsheet

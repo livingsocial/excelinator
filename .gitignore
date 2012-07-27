@@ -1,0 +1,6 @@
+.bundle/
+bin/
+gems/
+log/
+pkg/
+tmp/

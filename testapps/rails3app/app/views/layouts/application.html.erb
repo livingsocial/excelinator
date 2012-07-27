@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rails 3</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<%= link_to 'empty', :action => 'empty' %>
+<%= link_to 'xls_view', :action => 'xls_view' %>
+<%= link_to 'respond_to_html_only', :action => 'respond_to_html_only' %>
+<%= link_to 'respond_to_all', :action => 'respond_to_all' %>
+
+<br/>
+<hr/>
+<br/>
+
+<%= yield %>
+
+</body>
+</html>
