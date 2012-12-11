@@ -2,7 +2,7 @@
 
   arabic_only ||= @arabic_only
   words = generate_words_array(arabic_only)
-  FasterCSV.generate do |csv|
+  (ruby19? ? CSV : FasterCSV).generate do |csv|
     10.times do
       csv << 10.times.inject([]) { |ary, i| ary << words.sample  }
     end

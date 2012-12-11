@@ -2,7 +2,16 @@ require 'excelinator/xls'
 require 'excelinator/rails'
 require 'excelinator/version'
 require 'spreadsheet'
-require 'fastercsv'
+
+def ruby19?
+  RUBY_VERSION =~ /1.9/
+end
+
+if ruby19?
+  require 'csv'
+else
+  require 'fastercsv'
+end
 
 if defined?(Rails)
   Excelinator::Rails.setup
