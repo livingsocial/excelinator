@@ -47,6 +47,6 @@ describe Excelinator do
     # it's a risky test, as this can easily fail in other environments than it was written in. so, judge for yourself
     # whether or not it's worth it.
     large_html = table * 200_000
-    Benchmark.realtime { Excelinator.convert_content(large_html) }.should < 1.0 # 0.5 was too fast for me, always failed
+    Benchmark.realtime { Excelinator.convert_content(large_html) }.should < 1.0
   end
 end

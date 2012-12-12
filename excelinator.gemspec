@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
+require File.dirname(__FILE__) + '/lib/excelinator/version'
 
 Gem::Specification.new do |s|
   s.name        = "excelinator"
-  s.version     = "1.1.0"
-  s.authors     = %W(chrismo)
-  s.email       = %W(chrismo@clabs.org)
+  s.version     = Excelinator::VERSION
+  s.authors     = %W(chrismo jwhitmire)
+  s.email       = %W(chrismo@clabs.org jeff@jwhitmire.com)
   s.homepage    = "https://github.com/livingsocial/excelinator"
   s.summary     = %q{Excel Converter}
   s.description = %q{convert your csv data and html tables to excel data}

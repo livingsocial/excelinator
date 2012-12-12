@@ -112,8 +112,10 @@ I did, and I apologize. Lemme know when your pull request is ready.
 
 ###Are there any options to re-use CSV/HTML views with No additional controller/view code?
 
-I've tinkered with it, but it requires a bit of duck punching of the Rails
-rendering code.
+I've tinkered with it, but it requires a bit of duck punching of the
+Rails rendering code. Checkout
+[exceliderp](https://github.com/chrismo/exceliderp) and see if I've
+pushed it up there yet.
 
 ###What if I want to generate a real Excel spreadsheet from scratch with all sorts of awesome in it?
 
@@ -144,3 +146,9 @@ XMLDoc.
 
 They're not all supposed to work. Think of it more as a workshop for example
 code.
+
+CHANGELOG
+---------
+####1.1.0
+
+Added Ruby 1.9 support.
