@@ -122,7 +122,7 @@ pushed it up there yet.
 This gem uses `spreadsheet` under the covers. There are also others that
 support a wide variety of Excel features:
 
-- http://spreadsheet.rubyforge.org/
+- https://github.com/zdavatz/spreadsheet
 - http://surpass.ananelson.com/ 
 - https://github.com/randym/axlsx
 
