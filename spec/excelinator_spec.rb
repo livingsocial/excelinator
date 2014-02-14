@@ -34,7 +34,7 @@ describe Excelinator do
 
   it "should not detect table and convert CSV" do
     # due to string encoding issues beyond my comprehension, ruby1.9 makes a bad guess on the header, this fixes it
-    compare_string = ruby19? ? one_two_three_xls.force_encoding('US-ASCII') : one_two_three_xls
+    compare_string = !old_ruby? ? one_two_three_xls.force_encoding('US-ASCII') : one_two_three_xls
 
     # mini-gold standard test: pre-calculated the Excel header bytes and merely that part to match
     Excelinator.convert_content([1, 2, 3].join(','))[0..7].should == compare_string
