@@ -3,14 +3,14 @@ require 'excelinator/rails'
 require 'excelinator/version'
 require 'spreadsheet'
 
-def ruby19?
-  RUBY_VERSION =~ /1.9/
+def old_ruby?
+  RUBY_VERSION.to_f < 1.9
 end
 
-if ruby19?
-  require 'csv'
-else
+if old_ruby?
   require 'fastercsv'
+else
+  require 'csv'
 end
 
 if defined?(Rails)
