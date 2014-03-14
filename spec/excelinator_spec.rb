@@ -13,7 +13,16 @@ describe Excelinator do
     table.strip
   }
   let(:utf8) { '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' }
-  let(:one_two_three_xls) { one_two_three_xls = "\xD0\xCF\x11\xE0\xA1\xB1\x1A\xE1" }
+  let(:one_two_three_xls) {
+    one_two_three_xls = case RUBY_VERSION
+                          when /^1.8/
+                            "\xD0\xCF\x11\xE0\xA1\xB1\x1A\xE1"
+                          when /^1.9/
+                            "\xD0\xCF\x11\xE0\xA1\xB1\x1A\xE1".force_encoding('US-ASCII')
+                          when /^2/
+                            "\xD0\xCF\x11\xE0\xA1\xB1\x1A\xE1\x00\x00"
+                        end
+  }
 
   it "should strip out table" do
     Excelinator.html_as_xls("<body>#{table}</body>").should == utf8 + table
@@ -33,8 +42,7 @@ describe Excelinator do
   end
 
   it "should not detect table and convert CSV" do
-    # due to string encoding issues beyond my comprehension, ruby1.9 makes a bad guess on the header, this fixes it
-    compare_string = !old_ruby? ? one_two_three_xls.force_encoding('US-ASCII') : one_two_three_xls
+    compare_string = one_two_three_xls
 
     # mini-gold standard test: pre-calculated the Excel header bytes and merely that part to match
     Excelinator.convert_content([1, 2, 3].join(','))[0..7].should == compare_string
