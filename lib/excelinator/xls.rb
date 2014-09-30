@@ -21,6 +21,24 @@ def self.csv_to_xls(csv_content)
     book.write(ios)
     content
   end
+  
+  #memory ftw
+  def self.csv_to_xls_file(csv_path, file)
+    book = Spreadsheet::Workbook.new
+    sheet = book.create_worksheet
+    
+    CSV.open(csv_path) do |csv|
+      index = 0
+      csv.each do |raw_row|
+        row = sheet.row(index)
+        row.push(*raw_row)
+        index +=1
+      end
+    end
+    
+    book.write(file)
+    file
+  end
 
   # This only strips a <table> out of the html and adds a meta tag for utf-8 support. Excel will open an .xls file
   # with this content and grok it correctly (including formatting); however, many alternate spreadsheet applications
