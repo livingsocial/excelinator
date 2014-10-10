@@ -29,6 +29,11 @@ Call `Excelinator.csv_to_xls(csv_content)`. The csv_content will be parsed by
 FasterCSV and converted to Excel spreadsheet contents ready to be saved to
 file or sent across the wire.
 
+If you have a lot of CSV content and don't want to do all of this work in 
+memory, call `Excelinator.csv_to_xls_file(csv_path, file)`, passing the path to
+the CSV file and a path to the .xls file you'd like the workbook saved to. 
+(contributed by [maxwell](https://github.com/maxwell))
+
 ###HTML
 
 Call `Excelinator.html_as_xls(html_content)`. The table element from the HTML
