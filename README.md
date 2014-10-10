@@ -154,6 +154,14 @@ code.
 
 CHANGELOG
 ---------
-####1.1.0
+#### 1.3.0
+
+Added `csv_to_xls_file(csv_path, file)` (contributed by [maxwell](https://github.com/maxwell))
+
+#### 1.2.0
+
+Ruby 2 support
+
+#### 1.1.0
 
 Added Ruby 1.9 support.
