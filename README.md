@@ -34,6 +34,10 @@ memory, call `Excelinator.csv_to_xls_file(csv_path, file)`, passing the path to
 the CSV file and a path to the .xls file you'd like the workbook saved to. 
 (contributed by [maxwell](https://github.com/maxwell))
 
+If you want the CSV Data not to be separated by ';' you can call 
+`Excelinator.csv_to_xls_file(csv_path, file, ",")` or 
+`Excelinator.csv_to_xls(csv_content, ",")` or with any other separator sign.
+
 ###HTML
 
 Call `Excelinator.html_as_xls(html_content)`. The table element from the HTML
