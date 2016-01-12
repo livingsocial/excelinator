@@ -158,6 +158,11 @@ code.
 
 CHANGELOG
 ---------
+#### 1.3.1
+
+Merged PRs (effectively and actually) from ikusei and maxwell to remove the versioning on 
+the dependent `spreadsheet` gem and allow for a custom separator.
+
 #### 1.3.0
 
 Added `csv_to_xls_file(csv_path, file)` (contributed by [maxwell](https://github.com/maxwell))
