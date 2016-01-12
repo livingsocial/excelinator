@@ -7,8 +7,8 @@ module Excelinator
     content =~ /<table/ ? Excelinator.html_as_xls(content) : Excelinator.csv_to_xls(content)
   end
 
-def self.csv_to_xls(csv_content)
-    ary = (!old_ruby? ? CSV : FasterCSV).parse(csv_content)
+def self.csv_to_xls(csv_content, separator=",")
+    ary = (!old_ruby? ? CSV : FasterCSV).parse(csv_content, { :col_sep => separator} )
 
     book = Spreadsheet::Workbook.new
     sheet = book.create_worksheet
@@ -23,11 +23,11 @@ def self.csv_to_xls(csv_content)
   end
   
   #memory ftw
-  def self.csv_to_xls_file(csv_path, file)
+  def self.csv_to_xls_file(csv_path, file, separator=",")
     book = Spreadsheet::Workbook.new
     sheet = book.create_worksheet
-    
-    CSV.open(csv_path) do |csv|
+
+    CSV.open(csv_path, { :col_sep => separator} ) do |csv|
       index = 0
       csv.each do |raw_row|
         row = sheet.row(index)
