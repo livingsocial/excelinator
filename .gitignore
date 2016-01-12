@@ -1,5 +1,6 @@
 .bundle/
 .rvmrc
+Gemfile.lock
 bin/
 gems/
 log/
