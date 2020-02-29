@@ -2,8 +2,7 @@ PATH
   remote: ../..
   specs:
     excelinator (1.0.0)
-      fastercsv
-      spreadsheet (= 0.6.8)
+      spreadsheet
 
 GEM
   remote: http://rubygems.org/
@@ -68,7 +67,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.4)
-    rake (0.9.2.2)
+    rake (13.0.1)
     rdoc (3.12)
       json (~> 1.4)
     ruby-ole (1.2.11.3)
