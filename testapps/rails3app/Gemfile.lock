@@ -2,8 +2,7 @@ PATH
   remote: ../..
   specs:
     excelinator (1.0.0)
-      fastercsv
-      spreadsheet (= 0.6.8)
+      spreadsheet
 
 GEM
   remote: http://rubygems.org/
@@ -49,7 +48,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     polyglot (0.3.3)
-    rack (1.2.5)
+    rack (1.2.8)
     rack-mount (0.6.14)
       rack (>= 1.0.0)
     rack-test (0.5.7)
