@@ -8,7 +8,7 @@ module Excelinator
   end
 
 def self.csv_to_xls(csv_content, separator=",")
-    ary = (!old_ruby? ? CSV : FasterCSV).parse(csv_content, { :col_sep => separator} )
+    ary = (!old_ruby? ? CSV : FasterCSV).parse(csv_content, col_sep: separator)
 
     book = Spreadsheet::Workbook.new
     sheet = book.create_worksheet
